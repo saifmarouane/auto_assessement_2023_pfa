@@ -1,0 +1,85 @@
+prompts:
+  base:
+    system: |
+      -suposez que Tu es un recruteur qui reçoit un consultant dans le cadre d'une séance de one-on-one meeting afin de discuter de manière informelle et amicale.
+      -En tant que recruteur bienveillant et constructif,tu entretiens la conversation et tu poses des questions au consultant de manière ouverte, concise et franche.
+      -Les question doivent etre simple comprehensible est tres courte
+      
+      -Voici un contexte sous forme de résumé des conversations précédentes tu peux l'utiliser :
+      "$CONTEXTE"
+    assistant: |
+      -Bonjour,cv? je suis ton recruteur. Bienvenue à notre séance de one-on-one meeting je vais vous poser des question qui corespond a level que tu as choisis parmi .
+    
+
+  monitoring:
+    summarizer: |
+      Début de la fiche de poste 
+      Le niveau 1 est décrit par les caractéristiques suivantes : $level1
+      Le niveau 2 est décrit par les caractéristiques suivantes : $level2
+      Le niveau 3 est décrit par les caractéristiques suivantes : $level3
+      Le niveau 4 est décrit par les caractéristiques suivantes : $level4
+      Le niveau 5 est décrit par les caractéristiques suivantes : $level5
+      Fin de la fiche de poste
+      -------------
+      La conversation suivante décrit un échange entre un consultant et son recruteur :
+      -------------
+      Début de la conversation
+            En tant qu'intervieweur, vous devez évaluer le niveau d'expertise d'un candidat dans la réalisation d'entretiens et la prise de décisions d'embauche,Demandez au candidat de sélectionner le niveau qui correspond le mieux à ses compétences en matière d'entretiens d'embauche ,Niveau 1 : Intervieweur régulier Niveau 2 : Intervieweur actif contribuant à des décisions d'embauche significatives Niveau 3 : Leader proactif du recrutement pour une équipe ,Niveau 4 : Participant actif et décideur dans les processus d'embauche ,Niveau 5 : Définit la stratégie de recrutement et recrute à grande échelle.En fonction du niveau sélectionné, posez les questions correspondantes a la descriptions du niveau selectiné
+            Enfin, en fonction des réponses du candidat aux invites, vous pouvez déterminer si le candidat a le bon niveau en comparant ses réponses aux descriptions de niveau correspondantes.
+      Fin de la conversation
+      -------------
+        
+
+  levels:
+    level1: |
+      Un intervieweur régulier. Capable de suivre un processus d'embauche structuré et de contribuer à la prise de décision.
+      - Apprentissage de l'interview et de l'évaluation des candidats pour aider l'entreprise à constituer une équipe diversifiée et talentueuse.
+      - Fournir régulièrement des commentaires d'interview détaillés, basés sur des preuves et opportuns, et amener de nouveaux candidats dans le pipeline.
+      - Vous apprenez à interviewer et à évaluer les candidats pour nous aider à constituer une équipe diversifiée et talentueuse.
+      - Vous assistez régulièrement à des entretiens pour vous familiariser avec le processus.
+      - Vous consultez régulièrement les offres d'emploi actuelles et faites appel à vos contacts.
+      - Vous recherchez régulièrement des opportunités d'embauche grâce à votre réseau.
+      - Vous êtes conscient de l'engagement de vos collègues et signalez de manière proactive les problèmes à votre responsable.
+
+    level2: |
+      Interviews régulièrement, aide l'équipe à prendre des décisions d'embauche significatives et contribue à la constitution d'un pipeline diversifié.
+      - Contribue activement à l'interview et à l'évaluation des candidats pour aider l'entreprise à constituer une équipe talentueuse en menant des interviews plus avancées dans des domaines spécifiques et en évaluant leur niveau.
+      - Vous participez activement à l'interview et à l'évaluation des candidats en menant des interviews plus avancées dans des domaines spécifiques et en évaluant leur niveau.
+      - Vous contribuez à l'amélioration du processus d'embauche en ajoutant des questions d'entretien, des tests de codage et des études de cas.
+      - Vous êtes capable d'appliquer des critères et une vision pour identifier les bons candidats et travailler avec l'équipe de recrutement pour les intégrer.
+      - Vous exploitez votre réseau et vos canaux pour identifier et attirer des talents.
+
+    level3: |
+      Mène activement les efforts de recrutement pour une équipe et attire régulièrement d'excellents candidats.
+      - Vous menez les efforts de recrutement, déterminez les effectifs nécessaires pour votre équipe, identifiez les bons candidats et travaillez avec l'équipe de recrutement pour les intégrer.
+      - Vous déterminez les compétences nécessaires pour votre équipe et travaillez activement avec l'équipe de recrutement pour les intégrer.
+      - Vous participez activement à l'attraction, à l'interview et à l'évaluation de candidats clés.
+      - Vous veillez à ce que votre équipe soit calibrée, impliquée dans le recrutement et mène activement des entretiens.
+      - Vous contribuez activement à maintenir et renforcer l'intégrité du processus de recrutement.
+      - Vous enseignez aux nouveaux intervieweurs comment mener des entretiens avec empathie.
+      - Vous recherchez des approches pour trouver des candidats et constituer un vivier de recrutement.
+      - Vous êtes conscient de l'engagement de votre équipe et avez une stratégie proactive de rétention.
+      - Vous travaillez activement pour impliquer et fidéliser les consultants, et établir la bonne combinaison de talents et d'expérience dans votre équipe.
+
+    level4: |
+      Contribue activement et dirige les décisions d'embauche, et met tout en œuvre pour trouver d'excellents candidats.
+      - Gagnez la confiance des candidats et représentez la mission, la stratégie et la culture de l'entreprise tout au long du processus d'entretien.
+      - Vous attirez et recrutez une équipe diversifiée et talentueuse avec une large gamme d'expériences et de forces, en gardant à l'esprit la santé et le succès à long terme de l'organisation et/ou des équipes.
+      - Vous participez activement à l'interview et à l'évaluation de candidats seniors et vous assurez que votre ou vos équipes sont calibrées et mènent des entretiens.
+      - Vous êtes de plus en plus impliqué dans les initiatives de recrutement et potentiellement membre du comité de recrutement.
+      - Vous établissez des relations solides avec les candidats clés et pouvez représenter la mission, la stratégie et la culture de l'entreprise tout au long du processus d'entretien.
+      - Vous avez une bonne connaissance de l'engagement de plusieurs équipes et une stratégie proactive de rétention.
+
+    level5: |
+      Définit la stratégie de recrutement, investit dans des relations à long terme pour les rôles critiques et recrute à grande échelle.
+      - Conçoit et pilote la stratégie de l'entreprise pour attirer des talents pour divers rôles en ayant à l'esprit la diversité et gagner la confiance de candidats plus seniors.
+      - Vous fixez le ton, les politiques et les objectifs en matière de constitution et d'embauche d'équipes diversifiées et de haute qualité.
+      - Vous attirez des talents seniors et diversifiés vers l'entreprise et bénéficiez d'une forte adhésion dans toute l'entreprise.
+      - Vous participez activement à l'interview et à l'évaluation des candidats aux postes de direction. Vous examinez de manière holistique nos processus/normes de recrutement et contribuez à leur amélioration.
+      - Vous adoptez une approche globale de l'engagement et de la rétention des talents dans plusieurs équipes ou dans toute l'organisation.
+      - Vous identifiez et utilisez des canaux d'acquisition prometteurs.
+
+  evaluation:
+    criteria:
+      - aspect: recrutement
+        prompt: "Choisissez le niveau qui correspond le mieux à votre expertise parmi les options suivantes : Level 1, Level 2, Level 3, Level 4, Level 5."
