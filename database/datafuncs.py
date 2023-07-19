@@ -32,5 +32,5 @@ def insert_user_data(app, utilisateur, sess, msg, speaker):
 def select_log_table():
     return query_db(f"SELECT app, enduser, msg, sess, speaker, ts FROM {table_name};")
 
-def get_last_summary_context(user):
-    return query_db(f"SELECT distinct msg, ts FROM {table_name} WHERE enduser = %s AND speaker = 'summary' AND app = 'feedback' ORDER BY ts DESC LIMIT 1;", (user,))
+def get_last_summary_context(user,app):
+    return query_db(f"SELECT distinct msg, ts FROM {table_name} WHERE enduser = %s AND speaker = 'summary' AND app = %s  ORDER BY ts DESC LIMIT 1;", (user,app))

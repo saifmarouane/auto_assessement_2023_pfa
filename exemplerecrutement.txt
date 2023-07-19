@@ -1,0 +1,25 @@
+Début de la conversation
+
+Recruteur : Bonjour, je suis ravi de vous rencontrer. Nous allons passer à l'évaluation de vos compétences en tant qu'intervieweur. Tout d'abord, veuillez sélectionner le niveau qui correspond le mieux à vos compétences en matière d'entretiens d'embauche : Niveau 1, Niveau 2, Niveau 3, Niveau 4 ou Niveau 5. Pouvez-vous me dire quel niveau vous choisissez et pourquoi ?
+
+Consultant : Bonjour, je pense que je suis au niveau 3. J'ai acquis de l'expérience dans la conduite d'entretiens et j'ai également travaillé sur l'attraction et l'évaluation de candidats clés pour mon équipe.
+
+Recruteur : Très bien, passons maintenant aux questions. Selon la description du niveau 3, vous devez participer activement à l'attraction, à l'interview et à l'évaluation de candidats clés. Pouvez-vous me donner un exemple d'une initiative que vous avez prise pour attirer des candidats talentueux dans le passé ?
+
+Consultant : Certainement ! Lorsque nous avions besoin de recruter des développeurs expérimentés, j'ai créé une campagne de recrutement ciblée sur les réseaux sociaux, en mettant en avant les projets passionnants sur lesquels ils travailleraient et en soulignant les opportunités de croissance au sein de notre entreprise. Cela nous a permis d'attirer l'attention de candidats qualifiés et motivés.
+
+Recruteur : Très bien. La prochaine caractéristique du niveau 3 concerne votre contribution à maintenir et renforcer l'intégrité du processus de recrutement. Comment avez-vous assuré cela dans vos expériences passées ?
+
+Consultant : Dans mon rôle précédent, j'ai mis en place un processus d'évaluation structuré pour tous les candidats, en veillant à ce que chaque évaluateur suive les mêmes critères et partage ses observations de manière transparente. J'ai également organisé des sessions de formation pour les nouveaux intervieweurs, afin de les sensibiliser à l'importance de l'équité et de l'inclusion dans le processus de recrutement.
+
+Recruteur : Très bien. La dernière question concerne votre stratégie proactive de rétention. Pouvez-vous me donner un exemple de la façon dont vous avez travaillé pour impliquer et fidéliser les consultants dans votre équipe précédente ?
+
+Consultant : Bien sûr. J'ai mis en place des programmes de mentorat au sein de l'équipe, en associant les nouveaux consultants à des collègues plus expérimentés. Cela leur permettait de développer leurs compétences et de se sentir soutenus dans leur parcours professionnel. J'ai également organisé des réunions régulières pour recueillir les feedbacks et les préoccupations de l'équipe, et j'ai pris des mesures concrètes pour améliorer leur satisfaction au travail.
+
+Recruteur : Merci pour vos réponses. Vous avez démontré une bonne compréhension des responsabilités et des compétences requises pour le niveau 3. Vos exemples concrets montrent votre expérience dans le recrutement et la gestion des talents. Nous prendrons en compte ces informations dans notre évaluation. Avez-vous des questions supplémentaires concernant le processus de recrutement ?
+
+Consultant : Non, je pense que j'ai tout ce qu'il me faut. Je vous remercie pour cette opportunité et j'attends avec impatience la suite du processus.
+
+Recruteur : Ce fut un plaisir de vous rencontrer. Nous vous tiendrons informé de la suite. Bonne journée !
+
+Fin de la conversation

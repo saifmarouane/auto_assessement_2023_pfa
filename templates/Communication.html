@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>auto assessment</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+  <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <main role="main" class="container">
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal"><a class="p-2 text-dark" href="/">GPT Family</a></h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-white" style="background-color: black;pointer-events: none;" href="#">Communication GPT</a>
+      </nav>
+      <button type="button" class="btn btn-secondary" disabled>Sign in</button>
+    </div>
+
+    <div class="container" style="padding-bottom: 1%;">
+      {% if chat %}
+        <div>
+          <ul id="chatconv">
+            {% for r in chat %}
+              {% if r[4] == "user" %}
+                <li class="user"><span>{{r[4]}}</span> : {{r[3]}}</li>
+              {% else %}
+                <li class="assistant"><span style="text-decoration: underline;">{{r[4]}}</span> : {{r[3]}}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+ 
+    <div class="container">
+      <form action="/Communication" method="post" id="talk">
+        <textarea id="jawab" class="form-control" type="text" rows="4" name="jawab" placeholder="Let's talk... Say Hello to start (ENTER to submit, SHIFT+ENTER to break line)" required></textarea>
+      </form>
+      <div class="row">
+        <form class="col" action="/reinit/Communication" id="reinit">
+          <input class="form-control" style="background-color: #F8F4E3; color: black;" type="submit" value="Clear conversation" />
+        </form>
+      </div>
+    </div>
+  </main>
+
+<script type="text/javascript">
+  function scrollToBottom() {
+      window.scrollTo(0, document.body.scrollHeight);
+  }
+  history.scrollRestoration = "manual";
+  window.onload = scrollToBottom;
+
+  $(document).ready(function() {
+    $('#jawab').focus();
+  });
+
+  function disablePage() {
+    $("#talk :input").prop("disabled", true);
+    $("#evaluate :input").prop("disabled", true);
+    $("#reinit :input").prop("disabled", true);
+    $("#go").hide();
+  }
+  
+  $(function() {
+      $('form').each(function() {
+        if ($(this).attr('id') == "talk") { 
+            $(this).find('textarea').keypress(function(e) {
+                // Enter pressed?
+                if((e.which == 10 || e.which == 13) && !e.ctrlKey && !e.shiftKey) {
+                  const formData = new FormData(this.form);
+                  $("#chatconv").append("<li class='user'><span>user</span> : "+formData.get("jawab")+"</li>");
+                  this.form.submit();
+                  disablePage();
+                }
+            });
+        }
+      });
+  });
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
+</body>
+</html>
