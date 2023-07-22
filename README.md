@@ -38,3 +38,11 @@ This uses the [Flask](https://flask.palletsprojects.com/en/2.0.x/) web framework
    ```
 
 You should now be able to access the app at [http://127.0.0.1:5001](http://127.0.0.1:5001)!
+
+
+
+##pour exec dans le terminale 
+run-
+& /venv/Scripts/Activate.ps1
+run-
+flask run --host=0.0.0.0 --port=5001

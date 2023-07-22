@@ -14,7 +14,19 @@ with open('prompts/Yaml_Files/prompt_Communication.yml', 'r', encoding='utf-8') 
 with open('prompts/Yaml_Files/prompt_Membership.yml', 'r', encoding='utf-8') as f:
     yml_Membership = yaml.safe_load(f)    
 with open('prompts/Yaml_Files/prompt_Ownership.yml', 'r', encoding='utf-8') as f:
-    yml_Ownership = yaml.safe_load(f)    
+    yml_Ownership = yaml.safe_load(f)
+with open('prompts/Yaml_Files/prompt_BrandEvangelism.yml', 'r', encoding='utf-8') as f:
+    yml_BrandEvangelism = yaml.safe_load(f)     
+
+with open('prompts/Yaml_Files/prompt_Process.yml', 'r', encoding='utf-8') as f:
+    yml_Process = yaml.safe_load(f) 
+
+with open('prompts/Yaml_Files/prompt_Community.yml', 'r', encoding='utf-8') as f:
+    yml_Community = yaml.safe_load(f)        
+with open('prompts/Yaml_Files/prompt_Methodology.yml', 'r', encoding='utf-8') as f:
+    yml_Methodology = yaml.safe_load(f)         
+with open('prompts/Yaml_Files/prompt_Mentorship.yml', 'r', encoding='utf-8') as f:
+    yml_Mentorship = yaml.safe_load(f)             
 ########
 # app
 ########
@@ -37,6 +49,16 @@ def get_feedback_conversation_prompt(app,context):
         yml=yml_Commmunication
     elif app == 'Management':
         yml=yml_Management    
+    elif app == 'BrandEvangelism':
+        yml=yml_Management 
+    elif app == 'Process':
+        yml=yml_Process  
+    elif app == 'Community':
+        yml=yml_Community
+    elif app == 'Methodology':
+        yml=yml_Methodology
+    elif app == 'Mentorship':
+        yml=yml_Mentorship
 
 
     level1=yml['prompts']['levels']['level1']
@@ -65,8 +87,18 @@ def get_feedback_summarizer_prompt(app,conversation):
         yml=yml_Commmunication
     elif app == 'Management':
         yml=yml_Management  
-         
-    
+    elif app == 'BrandEvangelism':
+        yml=yml_BrandEvangelism      
+    elif app == 'Process':
+        yml=yml_Process  
+    elif app == 'Community':
+        yml=yml_Community 
+    elif app == 'Methodology':
+        yml=yml_Methodology
+
+
+
+
     return [{"role": "assistant", "content": yml['prompts']['monitoring']['summarizer'].replace("$level1","level1").replace("$level2","level2").replace("$level3","level3").replace("$level4","level4").replace("$level5","level5")}]
     
         

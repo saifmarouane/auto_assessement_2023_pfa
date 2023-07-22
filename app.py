@@ -17,10 +17,10 @@ def teardown_request(exception):
         del g._db_conn
 
 #############
-# FEEDBACK
+# Recruitment
 #############
 @app.route("/Recruitment", methods=("GET", "POST"))
-def feedback():
+def Recruitment():
     user = request.cookies.get('user')
     session = request.cookies.get('session')
     
@@ -150,6 +150,104 @@ def Ownership():
         return make_response(render_template("Ownership.html", chat=get_feedback_conversation("Ownership",user, session)))
 
 
+#############
+# BrandEvangelism
+#############
+@app.route("/BrandEvangelism", methods=("GET", "POST"))
+def BrandEvangelism():
+    user = request.cookies.get('user')
+    session = request.cookies.get('session')
+    
+    print(user,session)
+    if request.method == "POST":
+        user_response = request.form["jawab"]
+        handle_feedback("BrandEvangelism",user, session, user_response)
+        return redirect(url_for("BrandEvangelism"))
+    else:
+        if not user or not session:
+            return check_set_cookies(request, make_response(render_template("BrandEvangelism.html")))
+        return make_response(render_template("BrandEvangelism.html", chat=get_feedback_conversation("BrandEvangelism",user, session)))
+
+
+#############
+# Process
+#############
+@app.route("/Process", methods=("GET", "POST"))
+def Process():
+    user = request.cookies.get('user')
+    session = request.cookies.get('session')
+    
+    print(user,session)
+    if request.method == "POST":
+        user_response = request.form["jawab"]
+        handle_feedback("Process",user, session, user_response)
+        return redirect(url_for("Process"))
+    else:
+        if not user or not session:
+            return check_set_cookies(request, make_response(render_template("Process.html")))
+        return make_response(render_template("Process.html", chat=get_feedback_conversation("Process",user, session)))
+
+
+
+#############
+# Community
+#############
+@app.route("/Community", methods=("GET", "POST"))
+def Community():
+    user = request.cookies.get('user')
+    session = request.cookies.get('session')
+    
+    print(user,session)
+    if request.method == "POST":
+        user_response = request.form["jawab"]
+        handle_feedback("Community",user, session, user_response)
+        return redirect(url_for("Community"))
+    else:
+        if not user or not session:
+            return check_set_cookies(request, make_response(render_template("Community.html")))
+        return make_response(render_template("Community.html", chat=get_feedback_conversation("Community",user, session)))
+
+
+
+#############
+# Methodology
+#############
+@app.route("/Methodology", methods=("GET", "POST"))
+def Methodology():
+    user = request.cookies.get('user')
+    session = request.cookies.get('session')
+    
+    print(user,session)
+    if request.method == "POST":
+        user_response = request.form["jawab"]
+        handle_feedback("Methodology",user, session, user_response)
+        return redirect(url_for("Methodology"))
+    else:
+        if not user or not session:
+            return check_set_cookies(request, make_response(render_template("Methodology.html")))
+        return make_response(render_template("Methodology.html", chat=get_feedback_conversation("Methodology",user, session)))
+
+
+
+
+
+#############
+# Mentorship
+#############
+@app.route("/Mentorship", methods=("GET", "POST"))
+def Mentorship():
+    user = request.cookies.get('user')
+    session = request.cookies.get('session')
+    
+    print(user,session)
+    if request.method == "POST":
+        user_response = request.form["jawab"]
+        handle_feedback("Mentorship",user, session, user_response)
+        return redirect(url_for("Mentorship"))
+    else:
+        if not user or not session:
+            return check_set_cookies(request, make_response(render_template("Mentorship.html")))
+        return make_response(render_template("Mentorship.html", chat=get_feedback_conversation("Mentorship",user, session)))
 
 
 #############
@@ -174,7 +272,7 @@ def nexindex():
     return check_set_cookies(request, make_response(render_template("nexindex.html")))
 @app.route("/reinit/<redirection>", methods=["GET"])
 def reset_session_cookie(redirection):
-    assert redirection in ['index', 'Recruitment','Management','Technologie','Ownership','Communication','Business','Membership','testindex']
+    assert redirection in ['index','Mentorship','Methodology','Process', 'Community','Recruitment','Management','Technologie','Ownership','Communication','Business','Membership','testindex','BrandEvangelism']
     resp = make_response(redirect(url_for(redirection)))
     resp.set_cookie('session', '', expires=0)
     return resp
