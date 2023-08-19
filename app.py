@@ -16,6 +16,8 @@ def teardown_request(exception):
         db_conn.close()
         del g._db_conn
 
+
+
 #############
 # Recruitment
 #############
